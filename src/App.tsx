@@ -3,11 +3,11 @@
 import { Route, Routes } from "react-router-dom";
 import Header from "./components/organisms/Header";
 import Navbar from "./components/organisms/Navbar";
-import Inicio from "./assets/pages/Inicio";
-import Productos from "./assets/pages/Productos";
+import Inicio from "./pages/Inicio";
+import Productos from "./pages/Productos";
 import Footer from "./components/organisms/Footer";
-import Contactos from "./assets/pages/Contactos";
-import DetalleProducto from "./assets/pages/DetalleProducto";
+import Contactos from "./pages/Contactos";
+import DetalleProducto from "./pages/DetalleProducto";
 
 
 

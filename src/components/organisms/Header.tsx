@@ -14,7 +14,13 @@ function Header(){
             </nav>
             <br />
             <Buscador/>
-            <CardProducto/>
+            <CardProducto
+            id={1}
+            titulo="Producto destacado"
+            descripcion="descripcion de producto destacado"
+            precio={99.10}
+            imagen="https://via.placeholder.com/150"
+            />
 
 
         </header>

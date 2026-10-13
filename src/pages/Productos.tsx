@@ -1,4 +1,4 @@
-import CardProducto from "../../components/molecules/CardProductos";
+import CardProducto from "../components/molecules/CardProductos";
 
 function Productos(){
     return(
