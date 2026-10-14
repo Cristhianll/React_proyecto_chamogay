@@ -1,28 +1,33 @@
 import { Link } from "react-router-dom";
 
-function Navbar(){
-    return(
+function Navbar() {
+    return (
         <nav className="navbar navbar-expand bg-primary">
             <div className="container">
-                <samp className="navbar-brand text-white">
+                <span className="navbar-brand text-white">
                     Mitienda
-                </samp>
+                </span>
 
                 <div className="navbar-nav">
                     <Link className="nav-link text-white" to="/">
-                    Inicio
+                        Inicio
                     </Link>
 
                     <Link className="nav-link text-white" to="/productos">
-                    Productos
+                        Productos
                     </Link>
 
-                     <Link className="nav-link text-white" to="/contactos">
-                    Contactos
+                    <Link className="nav-link text-white" to="/contactos">
+                        Contactos
+                    </Link>
+
+                    <Link className="nav-link text-white" to="/login">
+                        Login
                     </Link>
                 </div>
             </div>
         </nav>
-    )
+    );
 }
-export default Navbar
+
+export default Navbar;

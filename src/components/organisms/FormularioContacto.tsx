@@ -59,7 +59,7 @@ function FormularioContacto (){
             alCambiar={setMensaje}
             />
 
-            <button type="submit" className="btn btn-primary"> Enviar Mensaje Gil</button>
+            <button type="submit" className="btn btn-primary"> Enviar Mensaje</button>
 
         </form>
     );
