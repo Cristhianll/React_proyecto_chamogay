@@ -5,7 +5,7 @@ function Inicio(){
         <div className="container mt-4">
             <h1>Inicio</h1>
             <p>
-              Bienvenido a nuestra tienda
+              Bienvenido a nuestra tienda gamer
             </p>
         </div>
      

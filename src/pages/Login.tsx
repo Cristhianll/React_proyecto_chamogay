@@ -12,7 +12,7 @@ function Login() {
 
                         <h2 className="mb-4">Iniciar sesión</h2>
                         
-                        <FormularioLogin />
+                        <FormularioLogin/>
                     </div>
                 </div>
             </div>

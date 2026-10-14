@@ -10,7 +10,7 @@ function Productos(){
                 id={1}
                 titulo="NoteBook"
                 descripcion="NoteBook ideal para estudiar "
-                precio={10000000}
+                precio={10000}
                 imagen="public/img/notebook-img.jpg"
                 />
 
@@ -26,8 +26,8 @@ function Productos(){
                  id={3}
                 titulo="Teclado"
                 descripcion="ideal para el NoteBook "
-                precio={100000000000000000}
-                imagen="public/img/teclado-img.jpg"
+                precio={20000}
+                imagen="/img/teclado-img.jpg"
                 />
 
                  <CardProducto
@@ -35,7 +35,7 @@ function Productos(){
                 titulo="Audufono"
                 descripcion="ideal para el NoteBook "
                 precio={10000}
-                imagen="public/img/audifono.jpg"
+                imagen="/img/audifono.jpg"
                 />
 
                 

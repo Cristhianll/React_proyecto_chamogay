@@ -6,7 +6,7 @@ const productos = [
                 id:1,
                 titulo:"NoteBook",
                 descripcion:"NoteBook ideal para estudiar ",
-                precio:10000000,
+                precio:10000,
                 imagen:"/img/notebook-img.jpg"
                 
             },
@@ -25,10 +25,18 @@ const productos = [
                 id:3,
                 titulo:"Teclado",
                 descripcion:"ideal para el NoteBook ",
-                precio:100000000000000000,
+                precio:20000,
                 imagen:"/img/teclado-img.jpg"
                 
-            }   
+            },
+            {
+                id:4,
+                titulo:"audifono",
+                descripcion:"audifono con cancelacion de ruido, y bajos envolventes",
+                precio:10000,
+                imagen:"img/audifono.jpg"
+            }
+
     ]   
 function DetalleProducto(){
 
