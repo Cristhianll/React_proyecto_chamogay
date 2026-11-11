@@ -2,14 +2,20 @@
 import { useState } from "react";
 import CampoFormulario from "../molecules/CampoFormulario";
 
+import type { SubmitEvent } from "react";
+
 
 function FormularioContacto (){
     const[nombre, setNombre] = useState("");
     const[correo, setCorreo] = useState("");
     const[mensaje, setMensaje] = useState("");
+    //permite indicar el mensaje se esta enviando
+    const[enviando, setEnviando] = useState (false);
 
-    const manejarEnvio = (e: React.SubmitEvent<HTMLFormElement>) =>{
+    const manejarEnvio = async (e:SubmitEvent<HTMLFormElement>) =>{
         e.preventDefault();//Evita recarga de pagina
+
+        if(enviando) return;
 
         if(nombre.trim() === ""){
             alert("Debe ingresar su nombre");
@@ -28,8 +34,42 @@ function FormularioContacto (){
             alert("Debe ingresar un mensaje malparido");
             return;
         }
-        alert("gracias por contactanor te llamaremos no nos llames");
-    }
+        setEnviando(true);
+
+        try {
+            //envia los datos del formulario a spring boot
+            const respuesta = await fetch(
+                "http://localhost:8082/api/contactos",
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-type": "application/json",
+                    },
+                    body: JSON.stringify({
+                        nombreCompleto: nombre.trim(),
+                        correo: correo.trim(),
+                        mensaje: mensaje.trim(),
+                    }),
+                }
+            );
+            
+            if (!respuesta.ok){
+                throw new Error(`Error HTTP ${respuesta.status}`);
+            }
+
+            alert("MENSAJE GUARDADO CORRECTAMENTE")
+            //limpiamos los campos solo si se guardo correctamente
+            setNombre("");
+            setCorreo("");
+            setMensaje("");
+        }catch(error){
+            console.error("Error al enviar el contacto:",error);
+            alert("no se pudo enviar el mensaje. intentelo de nuevo");
+        }finally{
+            setEnviando(false);
+        }
+    };
+
 
     return(
         <form onSubmit={manejarEnvio} noValidate>
@@ -59,7 +99,7 @@ function FormularioContacto (){
             alCambiar={setMensaje}
             />
 
-            <button type="submit" className="btn btn-primary"> Enviar Mensaje</button>
+            <button type="submit" className="btn btn-primary" disabled={enviando}> {enviando ? "Enviando...": "Enviar mensaje"}</button>
 
         </form>
     );

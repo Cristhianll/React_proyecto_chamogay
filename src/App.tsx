@@ -9,7 +9,7 @@ import Footer from "./components/organisms/Footer";
 import Contactos from "./pages/Contactos";
 import DetalleProducto from "./pages/DetalleProducto";
 import Login from "./pages/Login";
-
+import ListadoContactos from "./pages/ListadoContactos";
 
 
 
@@ -40,9 +40,13 @@ function App(){
         element = {<DetalleProducto/>}
         />
 
-        <Route 
-        path="/login" 
-        element={<Login/>} 
+        <Route
+        path="/login"
+        element={<Login/>}
+        />
+        <Route
+        path="/ListarContactos"
+        element={<ListadoContactos/>}
         />
 
       </Routes>
